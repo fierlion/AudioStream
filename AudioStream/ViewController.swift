@@ -7,12 +7,37 @@
 //
 
 import UIKit
+import Parse
+import AVFoundation
+import AVKit
 
-class ViewController: UIViewController {
+public var AudioPlayer = AVPlayer()
+public var SelectedSongNumber = Int()
+
+class TableViewController: UITableViewController, AVAudioPlayerDelegate {
+    
+    var IDArray = [String]()
+    var NameArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let objectIDQuery = PFQuery(className: "Songs")
+        objectIDQuery.findObjectsInBackgroundWithBlock({
+            (objectsArray : [PFObject]?, error: NSError?) in
+            if(error == nil){
+                for i in 0...objectsArray!.count{
+                    self.IDArray.append(objectsArray![i].valueForKey("ObjectID") as! String)
+                    NSLog("\(objectsArray)")
+                }
+                
+            }
+            else{
+                print("Error in retrieving \(error)")
+            }
+        
+        })
     }
 
     override func didReceiveMemoryWarning() {
