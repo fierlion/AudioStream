@@ -27,8 +27,8 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
         objectIDQuery.findObjectsInBackgroundWithBlock({
             (objectsArray : [PFObject]?, error: NSError?) in
             if(error == nil){
-                for i in 0...objectsArray!.count{
-                    self.IDArray.append(objectsArray![i].valueForKey("ObjectID") as! String)
+                for i in 0...objectsArray!.count-1{
+                    self.IDArray.append(objectsArray![i].valueForKey("objectId") as! String)
                     NSLog("\(objectsArray)")
                 }
                 
