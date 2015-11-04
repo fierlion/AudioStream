@@ -29,15 +29,39 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
             if(error == nil){
                 for i in 0...objectsArray!.count-1{
                     self.IDArray.append(objectsArray![i].valueForKey("objectId") as! String)
-                    NSLog("\(objectsArray)")
+                    self.NameArray.append(objectsArray![i].valueForKey("SongName") as! String)
+                    self.tableView.reloadData()
                 }
-                
             }
             else{
                 print("Error in retrieving \(error)")
             }
         
         })
+
+    }
+    
+    func grabSong() {
+        var SongQuery = PFQuery(className: "Songs")
+        SongQuery.getObjectInBackgroundWithId(IDArray[SelectedSongNumber], block:  {
+            (object : PFObject?, error : NSError?) in
+            if let AudioFileURLTemp = object?.objectForKey("SongFile")?.url as String!{
+                AudioPlayer = AVPlayer(URL: NSURL(string: AudioFileURLTemp)!)
+                AudioPlayer.play()
+            }
+        })
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return IDArray.count
+    }
+    
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell!
+        cell.textLabel?.text = NameArray[indexPath.row]
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
