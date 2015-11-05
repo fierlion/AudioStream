@@ -31,6 +31,7 @@
 		EB3110FA1BEA9C2F005BDF07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3110F91BEA9C2F005BDF07 /* SystemConfiguration.framework */; };
 		EB3110FC1BEA9C38005BDF07 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3110FB1BEA9C38005BDF07 /* libz.tbd */; };
 		EB3110FE1BEA9C42005BDF07 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3110FD1BEA9C42005BDF07 /* libsqlite3.tbd */; };
+		EB3111031BEADC84005BDF07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3111021BEADC84005BDF07 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		EB3110F91BEA9C2F005BDF07 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EB3110FB1BEA9C38005BDF07 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EB3110FD1BEA9C42005BDF07 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		EB3111021BEADC84005BDF07 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				EB3110AE1BEA9B6E005BDF07 /* AppDelegate.swift */,
 				EB3110B01BEA9B6E005BDF07 /* ViewController.swift */,
 				EB3110B21BEA9B6E005BDF07 /* Main.storyboard */,
+				EB3111021BEADC84005BDF07 /* MainViewController.swift */,
 				EB3110B51BEA9B6E005BDF07 /* Assets.xcassets */,
 				EB3110B71BEA9B6E005BDF07 /* LaunchScreen.storyboard */,
 				EB3110BA1BEA9B6E005BDF07 /* Info.plist */,
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3111031BEADC84005BDF07 /* MainViewController.swift in Sources */,
 				EB3110B11BEA9B6E005BDF07 /* ViewController.swift in Sources */,
 				EB3110AF1BEA9B6E005BDF07 /* AppDelegate.swift in Sources */,
 			);
@@ -577,6 +581,7 @@
 				EB3110D51BEA9B6E005BDF07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB3110D61BEA9B6E005BDF07 /* Build configuration list for PBXNativeTarget "AudioStreamTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +590,7 @@
 				EB3110D81BEA9B6E005BDF07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB3110D91BEA9B6E005BDF07 /* Build configuration list for PBXNativeTarget "AudioStreamUITests" */ = {
 			isa = XCConfigurationList;
@@ -593,6 +599,7 @@
 				EB3110DB1BEA9B6E005BDF07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
