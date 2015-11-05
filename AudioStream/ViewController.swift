@@ -42,7 +42,7 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
     }
     
     func grabSong() {
-        var SongQuery = PFQuery(className: "Songs")
+        let SongQuery = PFQuery(className: "Songs")
         SongQuery.getObjectInBackgroundWithId(IDArray[SelectedSongNumber], block:  {
             (object : PFObject?, error : NSError?) in
             if let AudioFileURLTemp = object?.objectForKey("SongFile")?.url as String!{
@@ -60,8 +60,12 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell!
         cell.textLabel?.text = NameArray[indexPath.row]
-        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        SelectedSongNumber = indexPath.row
+        grabSong()
     }
 
     override func didReceiveMemoryWarning() {
