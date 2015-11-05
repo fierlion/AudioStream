@@ -32,6 +32,7 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
                     self.IDArray.append(objectsArray![i].valueForKey("objectId") as! String)
                     self.NameArray.append(objectsArray![i].valueForKey("SongName") as! String)
                     self.tableView.reloadData()
+                    NSLog("Array is : \(objectsArray)")
                 }
             }
             else{
@@ -67,6 +68,7 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         SelectedSongNumber = indexPath.row
+        NSLog("IndexPath is :\(indexPath.row)")
         grabSong()
     }
 
