@@ -47,7 +47,8 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
         SongQuery.getObjectInBackgroundWithId(IDArray[SelectedSongNumber], block:  {
             (object : PFObject?, error : NSError?) in
             if let AudioFileURLTemp = object?.objectForKey("SongFile")?.url as String!{
-                AudioPlayer = AVPlayer(URL: NSURL(string: RadioURL)!)
+                AudioPlayer = AVPlayer(URL: NSURL(string: AudioFileURLTemp)!)
+//                AudioPlayer = AVPlayer(URL: NSURL(string: RadioURL)!)
                 AudioPlayer.play()
             }
         })
