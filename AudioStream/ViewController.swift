@@ -13,6 +13,7 @@ import AVKit
 
 public var AudioPlayer = AVPlayer()
 public var SelectedSongNumber = Int()
+public var RadioURL = "http://173.192.137.34:8050/"
 
 class TableViewController: UITableViewController, AVAudioPlayerDelegate {
     
@@ -46,7 +47,7 @@ class TableViewController: UITableViewController, AVAudioPlayerDelegate {
         SongQuery.getObjectInBackgroundWithId(IDArray[SelectedSongNumber], block:  {
             (object : PFObject?, error : NSError?) in
             if let AudioFileURLTemp = object?.objectForKey("SongFile")?.url as String!{
-                AudioPlayer = AVPlayer(URL: NSURL(string: AudioFileURLTemp)!)
+                AudioPlayer = AVPlayer(URL: NSURL(string: RadioURL)!)
                 AudioPlayer.play()
             }
         })
